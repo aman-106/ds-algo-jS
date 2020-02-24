@@ -42,44 +42,64 @@
 // }
 
 function runner(Arrivals, Departures, day) {
+  return processBooking(Arrivals, Departures, day);
+}
+
+function processBooking(Arrivals, Departures, day) {
   const roomsInfo = [];
+
+  // for all arriving guests
   for (let index = 0; index < Arrivals.length; index++) {
     const arr = Arrivals[index];
     const dep = Departures[index];
 
     let addedGuest = false;
+    // for a room , all guests
     for (let i = 0; i < roomsInfo.length; i++) {
+      addedGuest = false;
+      // console.log('roomsInfo',roomsInfo,'roomsInfo-index' ,i,'g-index',index);
+
       const stayInfo = roomsInfo[i];
+      let overlap = false;
       for (let ind = 0; ind < stayInfo.length; ind++) {
         const guestIndex = stayInfo[ind];
-        const overlap = overlappingInterval(
+        overlap = overlappingInterval(
           { start: arr, end: dep },
           { start: Arrivals[guestIndex], end: Departures[guestIndex] }
         );
-        console.log("overlap", overlap);
-        if (!overlap) {
-          if (stayInfo[ind]) {
-            stayInfo[ind].push(guestIndex);
-            if (ind + 1 > day) {
-              return 0;
-            }
-          } else {
-            stayInfo[ind] = [guestIndex];
-          }
-
-          roomsInfo[i] = stayInfo;
-          addedGuest = true;
+        // room is already occupied
+        if (overlap) {
+          break;
         }
+      }
+
+      //       console.log("overlap", overlap);
+      if (!overlap) {
+        // add to existing current room
+        //         console.log("stayInfo[i]", stayInfo, i);
+        if (stayInfo) {
+          stayInfo.push(index);
+          //           if (i + 1 > day) {
+          //             return 0;
+          //           }
+        } else {
+          stayInfo = [index];
+        }
+
+        roomsInfo[i] = stayInfo;
+        addedGuest = true;
+        break;
       }
     }
 
     if (!addedGuest) {
-      roomsInfo.push([index]);
-      if (roomsInfo.length > day) {
+      if (roomsInfo.length + 1 > day) {
         console.log(roomsInfo);
-
         return 0;
       }
+      roomsInfo.push([index]);
+
+      //       console.log("sdkdd", roomsInfo.length > day);
     }
   }
 
@@ -89,15 +109,19 @@ function runner(Arrivals, Departures, day) {
 }
 
 function overlappingInterval(interval, bound) {
-  console.log(interval, bound);
+  //   console.log('interval',interval, 'bound',bound);
   return (
-    (bound.start <= interval.start && interval.start <= bound.end) ||
-    (bound.start <= interval.end && interval.end <= bound.end)
+    (bound.start <= interval.start && interval.start < bound.end) ||
+    (bound.start < interval.end && interval.end <= bound.end)
   );
 }
 
-var Arrivals = [1, 3, 5];
-var Departures = [2, 6, 8];
-var K = 1;
+var Arrivals = [1, 3, 5, 1, 10];
+var Departures = [2, 7, 8, 2, 14];
+
+// Arrivals= [ 1, 2, 3 ]
+// Departures = [ 2, 3, 4 ]
+
+var K = 2;
 
 console.log(runner(Arrivals, Departures, K));
