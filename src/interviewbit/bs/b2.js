@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/allocate-books/
+// https://www.dream.com/problems/allocate-books/
 
 // Given an array of integers A of size N and an integer B.
 

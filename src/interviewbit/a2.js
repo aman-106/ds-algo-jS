@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/next-permutation/
+// https://www.dream.com/problems/next-permutation/
 // Implement the next permutation,
 // which rearranges numbers into the numerically next greater permutation of numbers for a given array A of size N.
 

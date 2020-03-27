@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/find-duplicate-in-array/
+// https://www.dream.com/problems/find-duplicate-in-array/
 
 // Given a read only array of n + 1 integers between 1 and n,
 // find one number that repeats in linear time using less than O(n) space and

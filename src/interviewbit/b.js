@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/anti-diagonals/
+// https://www.dream.com/problems/anti-diagonals/
 
 // Input:
 

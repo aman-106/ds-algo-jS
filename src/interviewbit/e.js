@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/max-distance/
+// https://www.dream.com/problems/max-distance/
 
 // Given an array A of integers, find the maximum of j - i subjected to the constraint of A[i] <= A[j].
 

@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/grid-unique-paths/
+// https://www.dream.com/problems/grid-unique-paths/
 // A robot is located at the top-left corner of an A x B grid (marked ‘Start’ in the diagram below).
 
 // Path Sum: Example 1

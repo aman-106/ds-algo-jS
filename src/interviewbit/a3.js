@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/merge-overlapping-intervals/
+// https://www.dream.com/problems/merge-overlapping-intervals/
 
 // Given a collection of intervals, merge all overlapping intervals.
 

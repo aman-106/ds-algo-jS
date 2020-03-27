@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/longest-palindromic-substring/
+// https://www.dream.com/problems/longest-palindromic-substring/
 
 // /  implementation of O(n^2) time and O(n^2) space method
 

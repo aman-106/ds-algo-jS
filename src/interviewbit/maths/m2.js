@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/sum-of-pairwise-hamming-distance/
+// https://www.dream.com/problems/sum-of-pairwise-hamming-distance/
 
 // Hamming distance between two non-negative
 // integers is defined as the number of positions at

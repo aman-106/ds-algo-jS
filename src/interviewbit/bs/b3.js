@@ -7,7 +7,7 @@
 // You are given a target value B to search. If found in the array, return its index, otherwise return -1.
 
 // You may assume no duplicate exists in the array.
-// https://www.interviewbit.com/problems/rotated-sorted-array-search/
+// https://www.dream.com/problems/rotated-sorted-array-search/
 // NOTE:- Array A was sorted in non-decreasing order before rotation.
 
 module.exports = {

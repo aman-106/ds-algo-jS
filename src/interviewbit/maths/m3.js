@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/excel-column-number/
+// https://www.dream.com/problems/excel-column-number/
 // Given a column title as appears in an Excel sheet, return its corresponding column number.
 
 // Example:

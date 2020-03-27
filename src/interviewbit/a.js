@@ -1,4 +1,4 @@
-//https://www.interviewbit.com/problems/max-non-negative-subarray/
+//https://www.dream.com/problems/max-non-negative-subarray/
 // https://www.geeksforgeeks.org/maximum-absolute-difference-value-index-sums/
 
 var maxset = function(A) {

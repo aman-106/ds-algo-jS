@@ -1,4 +1,4 @@
-// https://www.interviewbit.com/problems/hotel-bookings-possible/
+// https://www.dream.com/problems/hotel-bookings-possible/
 
 // A hotel manager has to process N advance bookings of rooms for the next season.
 // His hotel has K rooms. Bookings contain an arrival date and a departure date.
