@@ -1,16 +1,24 @@
-export function longestIncreasingSubsequence(seq) {
-    return longestIncreasingSubsequenceHelper(seq)
+function longestIncreasingSubsequence(seq) {
+  return longestIncreasingSubsequenceHelper(seq, 0, null);
 }
 
-function longestIncreasingSubsequenceHelper(seq, i, chosen) {
+function longestIncreasingSubsequenceHelper(seq, i, lstElem) {
+  if (i == seq.length) {
+    return 0;
+  }
+  var newLastElem = -1;
+  if (i == 0 || seq[i] > lstElem) {
+    newLastElem = seq[i];
+  }
 
-    if (seq[i] < chosen[chosen.length - 1] || -99999) {
-        let ch = seq[i];
-        chosen.push(ch);
-        longestIncreasingSubsequenceHelper(seq, i - 1, chosen);
-        chosen.pop();
-        longestIncreasingSubsequenceHelper(seq, i, chosen);
-    } else {
-        longestIncreasingSubsequenceHelper(seq, i - 1, chosen);
-    }
+  if (newLastElem >= 0) {
+    return Math.max(
+      longestIncreasingSubsequenceHelper(seq, i + 1, lstElem),
+      1 + longestIncreasingSubsequenceHelper(seq, i + 1, newLastElem)
+    );
+  }
+
+  return longestIncreasingSubsequenceHelper(seq, i + 1, lstElem);
 }
+
+console.log(longestIncreasingSubsequence([1, 10, 34, 32, 4]));
